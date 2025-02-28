@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f1ea;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .product img {
+            width: 100px;
+            border-radius: 10px;
+        }
+        .button {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #6A3D1A;
+        }
+        #cart {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img{
+            height: 120px;
+        }
+        h2{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+        h1{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="https://script.google.com/macros/s/AKfycbxGziL6kMYlvkz7tXWbcUeYoPjygImdxHmpNHULkAh1p5yIiWK3thoANF82jUFg5AY/exec"></form>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to Our Coffee Store</h1>
+        <div class="product">
+            <img src="passon.jpg" alt="passon soda">
+            <div>
+                <h2>Passon soda</h2>
+                <p>Price: $3</p>
+            </div>
+            <button class="button" onclick="addToCart('Espresso', 3)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="barrysoda.jpg" alt="strawberry">
+            <div>
+                <h2>strawberry</h2>
+                <p>Price: $1.50</p>
+            </div>
+            <button class="button" onclick="addToCart('Latte', 1.50)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="green tea.jpg" alt="Green tea">
+            <div>
+                <h2>Green tea</h2>
+                <p>Price: $2</p>
+            </div>
+            <button class="button" onclick="addToCart('Cappuccino', 2)">Add to Cart</button>
+        </div>
+        <h2>Shopping cart</h2>
+        <p id="cart">Items in cart: <span id="cart-count">0</span></p>
+        <p>Total: $<span id="cart-total">0</span></p>
+    </div>
+    <script>
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        function addToCart(item, price) {
+            cartCount++;
+            cartTotal += price;
+            document.getElementById('cart-count').innerText = cartCount;
+            document.getElementById('cart-total').innerText = cartTotal;
+            alert(item + ' added to cart!');
+        }
+    </script>
+</body>
+</html>
